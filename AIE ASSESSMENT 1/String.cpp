@@ -17,7 +17,11 @@ String::String()
 // Constructor
 String::String(const char* str)
 {
+<<<<<<< Updated upstream
 	int length = strlen(str);
+=======
+	size_t length = strlen(str);
+>>>>>>> Stashed changes
 	data = new char[length + 1];
 	strcpy_s(data, length + 1, str);
 }
@@ -38,7 +42,11 @@ String::String(const String& other)
 // DESTRUCTOR //
 
 // Releases the memory used by data
+<<<<<<< Updated upstream
 String::String()
+=======
+String::~String()
+>>>>>>> Stashed changes
 {
 	delete[] data;
 }
@@ -168,7 +176,11 @@ int String::find(int startIndex, const String& findString) const
 	{
 		return -1;
 	}
+<<<<<<< Updated upstream
 	
+=======
+
+>>>>>>> Stashed changes
 	return static_cast<int>(result - data);
 }
 
@@ -279,7 +291,11 @@ String& String::operator=(const String& rhs)
 		// Cope rhs to data
 		strcpy_s(data, length + 1, rhs.data);
 	}
+<<<<<<< Updated upstream
 	
+=======
+
+>>>>>>> Stashed changes
 	// Return string
 	return *this;
 }
@@ -303,7 +319,11 @@ String String::operator+(const String& rhs) const
 {
 	String result(*this);
 	result.append(rhs);
+<<<<<<< Updated upstream
 	
+=======
+
+>>>>>>> Stashed changes
 	return result;
 }
 
