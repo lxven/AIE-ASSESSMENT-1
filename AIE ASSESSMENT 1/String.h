@@ -33,7 +33,7 @@ public:
 	void prepend(const String& str);
 
 	// Return the const char* 
-	const char* Cstr() const;
+	const char* cStr() const;
 
 	// Convert all characters to lowercase
 	void toLower();

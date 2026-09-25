@@ -17,11 +17,7 @@ String::String()
 // Constructor
 String::String(const char* str)
 {
-<<<<<<< Updated upstream
-	int length = strlen(str);
-=======
 	size_t length = strlen(str);
->>>>>>> Stashed changes
 	data = new char[length + 1];
 	strcpy_s(data, length + 1, str);
 }
@@ -42,11 +38,9 @@ String::String(const String& other)
 // DESTRUCTOR //
 
 // Releases the memory used by data
-<<<<<<< Updated upstream
-String::String()
-=======
+
 String::~String()
->>>>>>> Stashed changes
+
 {
 	delete[] data;
 }
@@ -56,7 +50,7 @@ String::~String()
 // Return nuber of characters in the string
 int String::length() const
 {
-	return strlen(data);
+	return static_cast<int>(strlen(data));
 }
 
 
@@ -68,7 +62,7 @@ int String::length() const
 char String::characterAt(int index) const
 {
 	// Make sure the index is valid 
-	if (index < 0 || index >= index >= length())
+	if (index < 0 || index >= length())
 	{
 		return '\0';
 	}
@@ -110,6 +104,39 @@ void String::append(const String& str)
 	data = newData;
 }
 
+
+
+// Prepend //
+
+// Adds string to beginning
+void String::prepend(const String& str)
+{
+	int newLength = length() + str.length();
+
+	// Create memory for both strings
+	char* newData = new char[newLength + 1];
+
+	// Copy new string 
+	strcpy_s(newData, newLength + 1, str.data);
+
+	// Add orginal string after
+	strcat_s(newData, newLength + 1, data);
+
+	// Delete old memory
+	delete[] data;
+
+	// Point data to new memory
+	data = newData;
+}
+
+
+// cStr //
+
+// Returns character array
+const char* String::cStr() const
+{
+	return data;
+}
 
 
 // TO LOWER //
@@ -176,11 +203,6 @@ int String::find(int startIndex, const String& findString) const
 	{
 		return -1;
 	}
-<<<<<<< Updated upstream
-	
-=======
-
->>>>>>> Stashed changes
 	return static_cast<int>(result - data);
 }
 
@@ -269,6 +291,10 @@ char& String::operator[](int index)
 {
 	return data[index];
 }
+const char& String::operator[](int index) const
+{
+	return data[index];
+}
 
 
 
@@ -291,11 +317,7 @@ String& String::operator=(const String& rhs)
 		// Cope rhs to data
 		strcpy_s(data, length + 1, rhs.data);
 	}
-<<<<<<< Updated upstream
-	
-=======
 
->>>>>>> Stashed changes
 	// Return string
 	return *this;
 }
@@ -319,11 +341,7 @@ String String::operator+(const String& rhs) const
 {
 	String result(*this);
 	result.append(rhs);
-<<<<<<< Updated upstream
 	
-=======
-
->>>>>>> Stashed changes
 	return result;
 }
 
