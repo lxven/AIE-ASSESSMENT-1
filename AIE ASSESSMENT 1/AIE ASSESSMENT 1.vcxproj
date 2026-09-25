@@ -142,10 +142,7 @@
     <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-=======
     <ClCompile Include="Main.cpp" />
->>>>>>> Stashed changes
     <ClCompile Include="String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
