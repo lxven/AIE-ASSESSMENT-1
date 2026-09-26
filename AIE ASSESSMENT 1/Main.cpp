@@ -17,6 +17,10 @@ int main()
 	message.toUpper();
 	message.writeToConsole();
 
+	// Test toLower()
+	message.toLower();
+	message.writeToConsole();
+
 
 
 	return 0;
