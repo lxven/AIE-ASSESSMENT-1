@@ -9,9 +9,13 @@ int main()
 	String message("Hello, World!");
 	message.writeToConsole();
 
-	// Test characterAt
+	// Test characterAt()
 	cout << "Length: " << message.length() << endl;
 	cout << "Character: " << message.characterAt(1) << endl;
+
+	// Test toUpper() 
+	message.toUpper();
+	message.writeToConsole();
 
 
 
