@@ -21,6 +21,30 @@ int main()
 	message.toLower();
 	message.writeToConsole();
 
+	// Test append()
+	String first("Hello, ");
+	String second("World!");
+	first.append(second);
+	first.writeToConsole();
+
+	// Test prepend
+	String word("World!");
+	String beginning("Hello, ");
+	word.prepend(beginning);
+	word.writeToConsole();
+
+	// Test equalTo
+	String name1("Anisa");
+	String name2("Anisa");
+
+	if (name1.equalTo(name2))
+	{
+		cout << "The strings are equal!" << endl;
+	}
+	else
+	{
+		cout << "the strings are not equal!" << endl;
+	}
 
 
 	return 0;
