@@ -46,6 +46,24 @@ int main()
 		cout << "the strings are not equal!" << endl;
 	}
 
+	// Test find() - searches from beginning
+	String sentence("I Wanna Be a Billionare....So Freakkkingg Baddd!!!");
+	String searchWord("Freakkkingg");
+
+	sentence.writeToConsole();
+
+	cout << "What is the Search Word: " << endl;
+	searchWord.writeToConsole();
+
+	int location = sentence.find(searchWord);
+	cout << "Found at Index: " << location << endl;
+	
+	// Test find() - choose where searching starts
+	String words("Make it Rain Rain Like a Money Tree!!!!");
+	String findRain("Rain");
+	words.writeToConsole();
+	int location2 = words.find(10, findRain);
+	cout << "What is the Second Rain Search Word Index: " << location2 << endl;
 
 	return 0;
 }
