@@ -93,5 +93,39 @@ int main()
 	cout << "Player Name: ";
 	playerName.writeToConsole();
 
+	// Test [] operator
+	String gameName("AlienTD");
+	cout << "Game Name: ";
+	gameName.writeToConsole();
+	cout << "Character at index 0: " << gameName[0] << endl;
+	cout << "Character at index 5: " << gameName[5] << endl;
+
+	// Test = operator
+	String favoriteGame("Destiny 2");
+	String copiedGame;
+	cout << "Favorite Game: ";
+	favoriteGame.writeToConsole();
+	copiedGame = favoriteGame;
+	cout << "Copied Game: ";
+	copiedGame.writeToConsole();
+
+	// Test < operator
+	String game1("Diablo 4");
+	String game2("World of Warcraft");
+	cout << "Which Game Comes First Alphabetically?  " << endl;
+	cout << "Game 1: ";
+	game1.writeToConsole();
+	cout << "Or..." << endl;
+	cout << "Game 2: ";
+	game2.writeToConsole();
+
+	if (game1 < game2)
+	{
+		cout << "Diablo 4 Comes First Alphabetically!" << endl;
+	}
+	else
+	{
+		cout << "World of Warcraft Comes First Alpabetically!" << endl;
+	}
 	return 0;
 }
