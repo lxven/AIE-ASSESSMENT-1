@@ -62,8 +62,36 @@ int main()
 	String words("Make it Rain Rain Like a Money Tree!!!!");
 	String findRain("Rain");
 	words.writeToConsole();
+
 	int location2 = words.find(10, findRain);
 	cout << "What is the Second Rain Search Word Index: " << location2 << endl;
+
+	// Test readFromConsole() & writeToConsole()
+	String playerName;
+	String answer;
+
+	cout << "Enter Your Player Name: " << endl;
+	playerName.readFromConsole();
+
+	cout << "Is Your Player Name : ";
+	playerName.writeToConsole();
+	
+	cout << "Enter Yes or No: ";
+	answer.readFromConsole();
+
+	while (answer == String("No"))
+	{
+		cout << "Re-Enter Your Player Name: ";
+		playerName.readFromConsole();
+
+		cout << "Is Your Player Name : ";
+		playerName.writeToConsole();
+
+		cout << "Enter Yes or No: ";
+		answer.readFromConsole();
+	}
+	cout << "Player Name: ";
+	playerName.writeToConsole();
 
 	return 0;
 }
