@@ -79,7 +79,7 @@ int main()
 	cout << "Enter Yes or No: ";
 	answer.readFromConsole();
 
-	while (answer == String("No"))
+	while ((answer == String("No")) || (answer == String("no")) || (answer == String("NO")))
 	{
 		cout << "Re-Enter Your Player Name: ";
 		playerName.readFromConsole();
@@ -125,7 +125,36 @@ int main()
 	}
 	else
 	{
-		cout << "World of Warcraft Comes First Alpabetically!" << endl;
+		cout << "World of Warcraft Comes First Alphabetically!" << endl;
 	}
+	// Test + operator
+	String firstName("Anisa & ");
+	String secondName("Kamrin <3");
+	String fullName = firstName + secondName;
+	fullName.writeToConsole();
+
+	// Test += operator
+	String message2("Making Games = ");
+	String game3("Making Money For Fun!!");
+	message2 += game3;
+	message2.writeToConsole();
+
+	// Test replace()
+	String replaceSentence("Jolteon is My Favorite Pokemon!!!");
+	String oldWord("Jolteon");
+	String newWord("Gengar");
+
+	cout << "My Favorite Pokemon: ";
+	replaceSentence.writeToConsole();
+	
+	cout << "Sike...He is So Trash" << endl;
+	
+	replaceSentence.replace(oldWord, newWord);
+	cout << "Honestly..." << endl;
+	replaceSentence.writeToConsole();
+
+
+
+
 	return 0;
 }
