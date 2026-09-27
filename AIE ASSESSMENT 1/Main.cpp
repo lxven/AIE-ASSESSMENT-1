@@ -2,38 +2,65 @@
 #include "String.h"
 using namespace std;
 
+// Test function characterAt()
+void testCharacterAt()
+{
+	String message("Hello, World!");
+	if (message.characterAt(1) == 'e')
+	{
+		cout << "PASS" << endl;
+	}
+	else
+	{
+		cout << "FAIL" << endl;
+	}
+}
 
+// Test function toUpper()
+void testToUpper()
+{
+	String message("Hello, World!");
+	message.toUpper();
+	if (message.equalTo("HELLO, WORLD!"))
+	{
+		cout << "PASS" << endl;
+	}
+	else
+	{
+		cout << "FAIL" << endl;
+	}
+}
 int main()
 {
-	// Test "Hello World"
+	// "Hello World"
 	String message("Hello, World!");
 	message.writeToConsole();
 
-	// Test characterAt()
+	// characterAt()
 	cout << "Length: " << message.length() << endl;
 	cout << "Character: " << message.characterAt(1) << endl;
 
-	// Test toUpper() 
+	// toUpper() 
 	message.toUpper();
 	message.writeToConsole();
 
-	// Test toLower()
+	// toLower()
 	message.toLower();
 	message.writeToConsole();
 
-	// Test append()
+	// append()
 	String first("Hello, ");
 	String second("World!");
 	first.append(second);
 	first.writeToConsole();
 
-	// Test prepend
+	// prepend
 	String word("World!");
 	String beginning("Hello, ");
 	word.prepend(beginning);
 	word.writeToConsole();
 
-	// Test equalTo
+	// equalTo
 	String name1("Anisa");
 	String name2("Anisa");
 
@@ -46,7 +73,7 @@ int main()
 		cout << "the strings are not equal!" << endl;
 	}
 
-	// Test find() - searches from beginning
+	// find() - searches from beginning
 	String sentence("I Wanna Be a Billionare....So Freakkkingg Baddd!!!");
 	String searchWord("Freakkkingg");
 
@@ -58,7 +85,7 @@ int main()
 	int location = sentence.find(searchWord);
 	cout << "Found at Index: " << location << endl;
 	
-	// Test find() - choose where searching starts
+	// find() - choose where searching starts
 	String words("Make it Rain Rain Like a Money Tree!!!!");
 	String findRain("Rain");
 	words.writeToConsole();
@@ -66,7 +93,7 @@ int main()
 	int location2 = words.find(10, findRain);
 	cout << "What is the Second Rain Search Word Index: " << location2 << endl;
 
-	// Test readFromConsole() & writeToConsole()
+	// readFromConsole() & writeToConsole()
 	String playerName;
 	String answer;
 
@@ -93,14 +120,14 @@ int main()
 	cout << "Player Name: ";
 	playerName.writeToConsole();
 
-	// Test [] operator
+	// [] operator
 	String gameName("AlienTD");
 	cout << "Game Name: ";
 	gameName.writeToConsole();
 	cout << "Character at index 0: " << gameName[0] << endl;
 	cout << "Character at index 5: " << gameName[5] << endl;
 
-	// Test = operator
+	// = operator
 	String favoriteGame("Destiny 2");
 	String copiedGame;
 	cout << "Favorite Game: ";
@@ -109,7 +136,7 @@ int main()
 	cout << "Copied Game: ";
 	copiedGame.writeToConsole();
 
-	// Test < operator
+	// < operator
 	String game1("Diablo 4");
 	String game2("World of Warcraft");
 	cout << "Which Game Comes First Alphabetically?  " << endl;
@@ -127,19 +154,19 @@ int main()
 	{
 		cout << "World of Warcraft Comes First Alphabetically!" << endl;
 	}
-	// Test + operator
+	// + operator
 	String firstName("Anisa & ");
 	String secondName("Kamrin <3");
 	String fullName = firstName + secondName;
 	fullName.writeToConsole();
 
-	// Test += operator
+	// += operator
 	String message2("Making Games = ");
 	String game3("Making Money For Fun!!");
 	message2 += game3;
 	message2.writeToConsole();
 
-	// Test replace()
+	// replace()
 	String replaceSentence("Jolteon is My Favorite Pokemon!!!");
 	String oldWord("Jolteon");
 	String newWord("Gengar");
@@ -152,5 +179,16 @@ int main()
 	replaceSentence.replace(oldWord, newWord);
 	cout << "Honestly..." << endl;
 	replaceSentence.writeToConsole();
+
+	////////////////// ALL TEST ///////////////
+
+	// Test characterAt()
+	testCharacterAt();
+
+	// Test toUpper()
+	testToUpper();
+
+
+
 	return 0;
 }
