@@ -5,7 +5,7 @@
 class String
 {
 private:
-	// Stores Char in Str
+	// Stores characters in String
 	char* data;
 
 public:
@@ -23,7 +23,7 @@ public:
 	// Return char representing the char at location
 	char characterAt(int index) const;
 
-	// Return true if str constain same characters
+	// Return true if str contains same characters
 	bool equalTo(const String& str) const;
 
 	// Adds str to end of string
@@ -33,7 +33,7 @@ public:
 	void prepend(const String& str);
 
 	// Return the const char* 
-	const char* Cstr() const;
+	const char* cStr() const;
 
 	// Convert all characters to lowercase
 	void toLower();
@@ -47,7 +47,7 @@ public:
 	// Return the location of strToFind
 	int find(int startIndex, const String& findString) const;
 
-	// Replace all occurences of findString
+	// Replace all occurrences of findString
 	void replace(const String& findString, const String& replaceString);
 
 	// Wait for input in console window
@@ -56,7 +56,10 @@ public:
 	// Write the string to console
 	void writeToConsole() const;
 
-	// Returns if ihs == rhs
+	// lhs = left hand side 
+	// rhs = right hand side
+	
+	// Returns if lhs == rhs
 	bool operator==(const String& rhs) const;
 
 	// Returns character located at position n
@@ -72,6 +75,6 @@ public:
 	// Return a new string that combines lhs and rhs
 	String operator+(const String& rhs) const;
 
-	// Modifies lhs , appending rhs to ihs 
+	// Modifies lhs , appending rhs to lhs 
 	String& operator+=(const String& rhs);
 };
