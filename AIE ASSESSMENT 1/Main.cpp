@@ -30,6 +30,54 @@ void testToUpper()
 		cout << "FAIL" << endl;
 	}
 }
+
+// Test function toLower()
+void testToLower()
+{
+	String message("Hello, World!");
+	message.toLower();
+	if (message.equalTo("hello, world!"))
+	{
+		cout << "PASS" << endl;
+	}
+	else
+	{
+		cout << "FAIL" << endl;
+	}
+}
+
+// Test function append()
+void testAppend()
+{
+	String message("Hello, ");
+	String word("World!");
+	message.append(word);
+	if (message.equalTo("Hello, World!"))
+	{
+		cout << "PASS" << endl;
+	}
+	else
+	{
+		cout << "FAIL" << endl;
+	}
+}
+
+// Test function prepend()
+void testPrepend()
+{
+	String message("World!");
+	String word("Hello, ");
+	message.prepend(word);
+	if (message.equalTo("Hello, World!"))
+	{
+		cout << "PASS" << endl;
+	}
+	else
+	{
+		cout << "FAIL" << endl;
+	}
+}
+
 int main()
 {
 	// "Hello World"
@@ -54,13 +102,13 @@ int main()
 	first.append(second);
 	first.writeToConsole();
 
-	// prepend
+	// prepend()
 	String word("World!");
 	String beginning("Hello, ");
 	word.prepend(beginning);
 	word.writeToConsole();
 
-	// equalTo
+	// equalTo()
 	String name1("Anisa");
 	String name2("Anisa");
 
@@ -187,6 +235,15 @@ int main()
 
 	// Test toUpper()
 	testToUpper();
+
+	// Test toLower()
+	testToLower();
+
+	// Test append()
+	testAppend();
+
+	// Test prepend()
+	testPrepend();
 
 
 
