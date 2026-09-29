@@ -511,62 +511,141 @@ int main()
 
 	////////////////// ALL TEST ///////////////////
 
+	// Open text log file
+	ofstream logFile("test_log.txt", ios::app);
+
+	// Count tests
+	int passedTests = 0;
+	int totalTests = 18;
+
 	// Test length()
-	testLength();
+	bool lengthResult = testLength();
+	if (testLength())
+	{
+		passedTests++;
+	}
 
 	// Test characterAt()
-	testCharacterAt();
+	bool characterAtResult = testCharacterAt();
+	if (testCharacterAt())
+	{
+		passedTests++;
+	}
 
 	// Test toUpper()
-	testToUpper();
+	bool toUpperResult = testToUpper();
+	if (testToUpper())
+	{
+		passedTests++;
+	}
 
 	// Test toLower()
-	testToLower();
+	bool toLowerResult = testToLower();
+	if (testToLower())
+	{
+		passedTests++;
+	}
 
 	// Test append()
-	testAppend();
+	bool appendResult = testAppend();
+	if (testAppend())
+	{
+		passedTests++;
+	}
 
 	// Test prepend()
-	testPrepend();
+	bool prependResult = testPrepend();
+	if (testPrepend())
+	{
+		passedTests++;
+	}
 
 	// Test cStr()
-	testCStr();
+	bool cStrResult = testCStr();
+	if (testCStr())
+	{
+		passedTests++;
+	}
 
 	// Test equalTo()
-	testEqualTo();
+	bool equalToResult = testEqualTo();
+	if (testEqualTo())
+	{
+		passedTests++;
+	}
 
 	// Test find()
-	testFind();
+	bool findResult = testFind();
+	if (testFind())
+	{
+		passedTests++;
+	}
 
 	// Test startIndexFind()
-	testStartIndexFind();
+	bool startIndexFindResult = testStartIndexFind();
+	if (testStartIndexFind())
+	{
+		passedTests++;
+	}
 
 	// Test readFromConsole()
-	testReadFromConsole();
+	bool readFromConsoleResult = testReadFromConsole();
+	if (testReadFromConsole())
+	{
+		passedTests++;
+	}
 
 	// Test writeToConsole()
 	testWriteToConsole();
 
+
 	// Test [] operator
-	testBracketOperator();
+	bool testBracketOperatorResult = testBracketOperator();
+	if (testBracketOperator())
+	{
+		passedTests++;
+	}
 
 	// Test == operator
-	testEqualOperator();
+	bool testEqualOperatorResult = testEqualOperator();
+	if (testEqualOperator())
+	{
+		passedTests++;
+	}
 
 	// Test = operator
-	testAssigmentOperator();
+	bool testAssignmentResult = testAssigmentOperator();
+	if (testAssigmentOperator())
+	{
+		passedTests++;
+	}
 
 	// Test < operator
-	testLessThanOperator();
+	bool testLessThanResult = testLessThanOperator();
+	if (testLessThanOperator())
+	{
+		passedTests++;
+	}
 
 	// Test + operator
-	testPlusOperator();
+	bool testPlusResult = testPlusOperator();
+	if (testPlusOperator())
+	{
+		passedTests++;
+	}
 
 	// Test += operator
-	testPlusEqualOperator();
+	bool testPlusEqualResult = testPlusEqualOperator();
+	if (testPlusEqualOperator())
+	{
+		passedTests++;
+	}
 
 	// Test replace()
-	testReplace();
-
+	bool testReplaceResult = testReplace();
+	if (testReplace())
+	{
+		passedTests++;
+	}
 	return 0;
 }
