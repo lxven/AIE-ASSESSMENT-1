@@ -70,13 +70,62 @@ void testPrepend()
 	message.prepend(word);
 	if (message.equalTo("Hello, World!"))
 	{
-		cout << "PASS" << endl;
+		cout << "Prepend(): PASS" << endl;
 	}
 	else
 	{
-		cout << "FAIL" << endl;
+		cout << "Prepend(): FAIL" << endl;
 	}
 }
+
+// Test function eqaulTo()
+void testEqualTo()
+{
+	String message1("Hello, World!");
+	String message2("Hello, World!");
+	if (message1.equalTo(message2))
+	{
+		cout << "EqualTo(): PASS" << endl;
+	}
+	else
+	{
+		cout << "EqualTo(): FAIL" << endl;
+	}
+}
+
+// Test function find()
+void testFind()
+{
+	String message("Hello World");
+	String word("World");
+	if (message.find(word) == 6)
+	{
+		cout << "Find(): PASS" << endl;
+	}
+	else
+	{
+		cout << "Find(): FAIL" << endl;
+	}
+}
+
+// Test function start index find()
+void testStartIndexFind()
+{
+	String message("Hello World");
+	String word("World");
+	if (message.find(7, word) == 12)
+	{
+		cout << "Start Index Find(): PASS" << endl;
+	}
+	else
+	{
+		cout << "Start Index Find(): FAIL" << endl;
+	}
+}
+
+
+
+
 
 int main()
 {
@@ -244,6 +293,15 @@ int main()
 
 	// Test prepend()
 	testPrepend();
+
+	// Test equalTo()
+	testEqualTo();
+
+	// Test find()
+	testFind();
+
+	// Test startIndexFind()
+	testStartIndexFind();
 
 
 
