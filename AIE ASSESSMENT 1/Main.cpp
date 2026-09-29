@@ -1,18 +1,31 @@
 #include <iostream>
+#include <cstring>
 #include "String.h"
 using namespace std;
-
+// Test function length()
+void testLength()
+{
+	String message("Hello");
+	if (message.length() == 5)
+	{
+		cout << "Test Length(): PASS" << endl;
+	}
+	else
+	{
+		cout << "Test Length(): FAIL" << endl;
+	}
+}
 // Test function characterAt()
 void testCharacterAt()
 {
 	String message("Hello, World!");
 	if (message.characterAt(1) == 'e')
 	{
-		cout << "PASS" << endl;
+		cout << "Test CharacterAt(): PASS" << endl;
 	}
 	else
 	{
-		cout << "FAIL" << endl;
+		cout << "Test CharacterAt(): FAIL" << endl;
 	}
 }
 
@@ -23,11 +36,11 @@ void testToUpper()
 	message.toUpper();
 	if (message.equalTo("HELLO, WORLD!"))
 	{
-		cout << "PASS" << endl;
+		cout << "Test ToUpper(): PASS" << endl;
 	}
 	else
 	{
-		cout << "FAIL" << endl;
+		cout << "Test ToUpper(): FAIL" << endl;
 	}
 }
 
@@ -38,11 +51,11 @@ void testToLower()
 	message.toLower();
 	if (message.equalTo("hello, world!"))
 	{
-		cout << "PASS" << endl;
+		cout << "Test ToLower(): PASS" << endl;
 	}
 	else
 	{
-		cout << "FAIL" << endl;
+		cout << "Test ToLower(): FAIL" << endl;
 	}
 }
 
@@ -54,11 +67,11 @@ void testAppend()
 	message.append(word);
 	if (message.equalTo("Hello, World!"))
 	{
-		cout << "PASS" << endl;
+		cout << "Test Append(): PASS" << endl;
 	}
 	else
 	{
-		cout << "FAIL" << endl;
+		cout << "Test Append(): FAIL" << endl;
 	}
 }
 
@@ -70,14 +83,27 @@ void testPrepend()
 	message.prepend(word);
 	if (message.equalTo("Hello, World!"))
 	{
-		cout << "Prepend(): PASS" << endl;
+		cout << "Test Prepend(): PASS" << endl;
 	}
 	else
 	{
-		cout << "Prepend(): FAIL" << endl;
+		cout << "Test Prepend(): FAIL" << endl;
 	}
 }
 
+// Test cStr()
+void testCStr()
+{
+	String message("Hello, World!");
+	if (strcmp(message.cStr(), "Hello, World!") == 0)
+	{
+		cout << "Test cStr(): PASS" << endl;
+	}
+	else
+	{
+		cout << "Test cStr(): FAIL" << endl;
+	}
+}
 // Test function eqaulTo()
 void testEqualTo()
 {
@@ -85,11 +111,11 @@ void testEqualTo()
 	String message2("Hello, World!");
 	if (message1.equalTo(message2))
 	{
-		cout << "EqualTo(): PASS" << endl;
+		cout << "Test EqualTo(): PASS" << endl;
 	}
 	else
 	{
-		cout << "EqualTo(): FAIL" << endl;
+		cout << "Test EqualTo(): FAIL" << endl;
 	}
 }
 
@@ -100,11 +126,11 @@ void testFind()
 	String word("World");
 	if (message.find(word) == 6)
 	{
-		cout << "Find(): PASS" << endl;
+		cout << "Test Find(): PASS" << endl;
 	}
 	else
 	{
-		cout << "Find(): FAIL" << endl;
+		cout << "Test Find(): FAIL" << endl;
 	}
 }
 
@@ -115,11 +141,11 @@ void testStartIndexFind()
 	String findRain("Rain");
 	if (words.find(10, findRain) == 13)
 	{
-		cout << "Start Index Find(): PASS" << endl;
+		cout << "Test Start Index Find(): PASS" << endl;
 	}
 	else
 	{
-		cout << "Start Index Find(): FAIL" << endl;
+		cout << "Test Start Index Find(): FAIL" << endl;
 	}
 }
 
@@ -131,11 +157,11 @@ void testReadFromConsole()
 	message.readFromConsole();
 	if (message.equalTo("Hello"))
 	{
-		cout << "ReadFromConsole: PASS" << endl;
+		cout << "Test ReadFromConsole(): PASS" << endl;
 	}
 	else
 	{
-		cout << "ReadFromConsole: FAIL" << endl;
+		cout << "Test ReadFromConsole(): FAIL" << endl;
 	}
 }
 
@@ -143,10 +169,118 @@ void testReadFromConsole()
 void testWriteToConsole()
 {
 	String message("Hello, World!");
-	cout << "WriteToConsole Test: ";
+	cout << "Test WriteToConsole(): ";
 	message.writeToConsole();
 }
+// Test function [] operator()
+void testBracketOperator()
+{
+	String gameName("AlienTD");
+	if (gameName[0] == 'A')
+	{
+		cout << "Test [] Operator: PASS" << endl;
+	}
+	else
+	{
+		cout << "Test [] Operator: FAIL" << endl;
+	}
+}
 
+// Test == operator
+void testEqualOperator()
+{
+	String player1("Lxven");
+	String player2("Lxven");
+	if (player1 == player2)
+	{
+		cout << "Test == Operator: PASS" << endl;
+	}
+	else
+	{
+		cout << "Test == Operator: FAIL" << endl;
+	}
+}
+
+
+// Test function = operator()
+void testAssigmentOperator()
+{
+	String favoriteGame("Destiny 2");
+	String copiedGame;
+	copiedGame = favoriteGame;
+	if (copiedGame.equalTo("Destiny 2"))
+	{
+		cout << "Test = Operator: PASS" << endl;
+	}
+	else
+	{
+		cout << "Test = Operator: FAIL" << endl;
+	}
+}
+
+// Test < operator()
+void testLessThanOperator()
+{
+	String game1("Diablo 4");
+	String game2("World of Warcraft");
+	if (game1 < game2)
+	{
+		cout << "Test < Operator: PASS" << endl;
+	}
+	else
+	{
+		cout << "Test < Operator: FAIL" << endl;
+	}
+}
+
+// Test + operator()
+void testPlusOperator()
+{
+	String firstName("Anisa & ");
+	String secondName("Kamrin <3");
+	String fullName = firstName + secondName;
+	if (fullName.equalTo("Anisa & Kamrin <3"))
+	{
+		cout << "Test + Operator: PASS" << endl;
+	}
+	else
+	{
+		cout << "Test + Operator: FAIL" << endl;
+	}
+}
+
+// Test += operator
+void testPlusEqualOperator()
+{
+	String message("Making Games = ");
+	String game("Making Money For Fun!!");
+	message += game;
+	if (message.equalTo("Making Games = Making Money For Fun!!"))
+	{
+		cout << "Test += Operator: PASS" << endl;
+	}
+	else
+	{
+		cout << "Test += Operator: FAIL" << endl;
+	}
+}
+
+// Test replace()
+void testReplace()
+{
+	String sentence("Jolteon is My Favorite Pokemon!!!");
+	String oldWord("Jolteon");
+	String newWord("Gengar");
+	sentence.replace(oldWord, newWord);
+	if (sentence.equalTo("Gengar is My Favorite Pokemon!!!"))
+	{
+		cout << "Test Replace(): PASS" << endl;
+	}
+	else
+	{
+		cout << "Test Replace(): FAIL" << endl;
+	}
+}
 
 
 
@@ -157,8 +291,11 @@ int main()
 	String message("Hello, World!");
 	message.writeToConsole();
 
+	// length()
+	String lengthMessage("Hello, World!");
+	cout << "Length: " << lengthMessage.length() << endl;
+
 	// characterAt()
-	cout << "Length: " << message.length() << endl;
 	cout << "Character: " << message.characterAt(1) << endl;
 
 	// toUpper() 
@@ -180,6 +317,10 @@ int main()
 	String beginning("Hello, ");
 	word.prepend(beginning);
 	word.writeToConsole();
+
+	// cStr() 
+	String cStrMessage("Hello, World!");
+	cout << "cStr:" << cStrMessage.cStr() << endl;
 
 	// equalTo()
 	String name1("Anisa");
@@ -205,7 +346,7 @@ int main()
 
 	int location = sentence.find(searchWord);
 	cout << "Found at Index: " << location << endl;
-	
+
 	// find() - choose where searching starts
 	String words("Make it Rain Rain Like a Money Tree!!!!");
 	String findRain("Rain");
@@ -223,7 +364,7 @@ int main()
 
 	cout << "Is Your Player Name : ";
 	playerName.writeToConsole();
-	
+
 	cout << "Enter Yes or No: ";
 	answer.readFromConsole();
 
@@ -247,6 +388,18 @@ int main()
 	gameName.writeToConsole();
 	cout << "Character at index 0: " << gameName[0] << endl;
 	cout << "Character at index 5: " << gameName[5] << endl;
+
+	// == operator
+	String player1("Lxven");
+	String player2("Lxven");
+	if (player1 == player2)
+	{
+		cout << "The Players name Are Equal!" << endl;
+	}
+	else
+	{
+		cout << "The Pleyers Name Are Not Equal!" << endl;
+	}
 
 	// = operator
 	String favoriteGame("Destiny 2");
@@ -294,14 +447,17 @@ int main()
 
 	cout << "My Favorite Pokemon: ";
 	replaceSentence.writeToConsole();
-	
+
 	cout << "Sike...He is So Trash" << endl;
-	
+
 	replaceSentence.replace(oldWord, newWord);
 	cout << "Honestly..." << endl;
 	replaceSentence.writeToConsole();
 
-	////////////////// ALL TEST ///////////////
+	////////////////// ALL TEST ///////////////////
+
+	// Test length()
+	testLength();
 
 	// Test characterAt()
 	testCharacterAt();
@@ -318,6 +474,9 @@ int main()
 	// Test prepend()
 	testPrepend();
 
+	// Test cStr()
+	testCStr();
+
 	// Test equalTo()
 	testEqualTo();
 
@@ -333,7 +492,26 @@ int main()
 	// Test writeToConsole()
 	testWriteToConsole();
 
-	// Test 
+	// Test [] operator
+	testBracketOperator();
+
+	// Test == operator
+	testEqualOperator();
+
+	// Test = operator
+	testAssigmentOperator();
+
+	// Test < operator
+	testLessThanOperator();
+
+	// Test + operator
+	testPlusOperator();
+
+	// Test += operator
+	testPlusEqualOperator();
+
+	// Test replace()
+	testReplace();
 
 	return 0;
 }
