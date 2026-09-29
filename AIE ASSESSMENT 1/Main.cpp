@@ -111,9 +111,9 @@ void testFind()
 // Test function start index find()
 void testStartIndexFind()
 {
-	String message("Hello World");
-	String word("World");
-	if (message.find(7, word) == 12)
+	String words("Make it Rain Rain Like a Money Tree!!!!");
+	String findRain("Rain");
+	if (words.find(10, findRain) == 13)
 	{
 		cout << "Start Index Find(): PASS" << endl;
 	}
@@ -121,6 +121,30 @@ void testStartIndexFind()
 	{
 		cout << "Start Index Find(): FAIL" << endl;
 	}
+}
+
+// Test function readFromConsole()
+void testReadFromConsole()
+{
+	String message;
+	cout << "Type Hello: ";
+	message.readFromConsole();
+	if (message.equalTo("Hello"))
+	{
+		cout << "ReadFromConsole: PASS" << endl;
+	}
+	else
+	{
+		cout << "ReadFromConsole: FAIL" << endl;
+	}
+}
+
+// Test function writeToConsole()
+void testWriteToConsole()
+{
+	String message("Hello, World!");
+	cout << "WriteToConsole Test: ";
+	message.writeToConsole();
 }
 
 
@@ -303,7 +327,13 @@ int main()
 	// Test startIndexFind()
 	testStartIndexFind();
 
+	// Test readFromConsole()
+	testReadFromConsole();
 
+	// Test writeToConsole()
+	testWriteToConsole();
+
+	// Test 
 
 	return 0;
 }
