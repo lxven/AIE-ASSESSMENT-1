@@ -1,66 +1,78 @@
 #include <iostream>
 #include <cstring>
+#include <fstream>
+#include <ctime>
+#include <iomanip>
 #include "String.h"
 using namespace std;
+
 // Test function length()
-void testLength()
+bool testLength()
 {
 	String message("Hello");
 	if (message.length() == 5)
 	{
 		cout << "Test Length(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test Length(): FAIL" << endl;
+		return false;
 	}
 }
 // Test function characterAt()
-void testCharacterAt()
+bool testCharacterAt()
 {
 	String message("Hello, World!");
 	if (message.characterAt(1) == 'e')
 	{
 		cout << "Test CharacterAt(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test CharacterAt(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function toUpper()
-void testToUpper()
+bool testToUpper()
 {
 	String message("Hello, World!");
 	message.toUpper();
 	if (message.equalTo("HELLO, WORLD!"))
 	{
 		cout << "Test ToUpper(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test ToUpper(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function toLower()
-void testToLower()
+bool testToLower()
 {
 	String message("Hello, World!");
 	message.toLower();
 	if (message.equalTo("hello, world!"))
 	{
 		cout << "Test ToLower(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test ToLower(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function append()
-void testAppend()
+bool testAppend()
 {
 	String message("Hello, ");
 	String word("World!");
@@ -68,15 +80,17 @@ void testAppend()
 	if (message.equalTo("Hello, World!"))
 	{
 		cout << "Test Append(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test Append(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function prepend()
-void testPrepend()
+bool testPrepend()
 {
 	String message("World!");
 	String word("Hello, ");
@@ -84,73 +98,83 @@ void testPrepend()
 	if (message.equalTo("Hello, World!"))
 	{
 		cout << "Test Prepend(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test Prepend(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test cStr()
-void testCStr()
+bool testCStr()
 {
 	String message("Hello, World!");
 	if (strcmp(message.cStr(), "Hello, World!") == 0)
 	{
 		cout << "Test cStr(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test cStr(): FAIL" << endl;
+		return false;
 	}
 }
 // Test function eqaulTo()
-void testEqualTo()
+bool testEqualTo()
 {
 	String message1("Hello, World!");
 	String message2("Hello, World!");
 	if (message1.equalTo(message2))
 	{
 		cout << "Test EqualTo(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test EqualTo(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function find()
-void testFind()
+bool testFind()
 {
 	String message("Hello World");
 	String word("World");
 	if (message.find(word) == 6)
 	{
 		cout << "Test Find(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test Find(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function start index find()
-void testStartIndexFind()
+bool testStartIndexFind()
 {
 	String words("Make it Rain Rain Like a Money Tree!!!!");
 	String findRain("Rain");
 	if (words.find(10, findRain) == 13)
 	{
 		cout << "Test Start Index Find(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test Start Index Find(): FAIL" << endl;
+		return false;
 	}
 }
 
 // Test function readFromConsole()
-void testReadFromConsole()
+bool testReadFromConsole()
 {
 	String message;
 	cout << "Type Hello: ";
@@ -158,10 +182,12 @@ void testReadFromConsole()
 	if (message.equalTo("Hello"))
 	{
 		cout << "Test ReadFromConsole(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test ReadFromConsole(): FAIL" << endl;
+		return false;
 	}
 }
 
@@ -173,37 +199,41 @@ void testWriteToConsole()
 	message.writeToConsole();
 }
 // Test function [] operator()
-void testBracketOperator()
+bool testBracketOperator()
 {
 	String gameName("AlienTD");
 	if (gameName[0] == 'A')
 	{
 		cout << "Test [] Operator: PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test [] Operator: FAIL" << endl;
+		return false;
 	}
 }
 
 // Test == operator
-void testEqualOperator()
+bool testEqualOperator()
 {
 	String player1("Lxven");
 	String player2("Lxven");
 	if (player1 == player2)
 	{
 		cout << "Test == Operator: PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test == Operator: FAIL" << endl;
+		return false;
 	}
 }
 
 
 // Test function = operator()
-void testAssigmentOperator()
+bool testAssigmentOperator()
 {
 	String favoriteGame("Destiny 2");
 	String copiedGame;
@@ -211,30 +241,34 @@ void testAssigmentOperator()
 	if (copiedGame.equalTo("Destiny 2"))
 	{
 		cout << "Test = Operator: PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test = Operator: FAIL" << endl;
+		return false;
 	}
 }
 
 // Test < operator()
-void testLessThanOperator()
+bool testLessThanOperator()
 {
 	String game1("Diablo 4");
 	String game2("World of Warcraft");
 	if (game1 < game2)
 	{
 		cout << "Test < Operator: PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test < Operator: FAIL" << endl;
+		return false;
 	}
 }
 
 // Test + operator()
-void testPlusOperator()
+bool testPlusOperator()
 {
 	String firstName("Anisa & ");
 	String secondName("Kamrin <3");
@@ -242,15 +276,17 @@ void testPlusOperator()
 	if (fullName.equalTo("Anisa & Kamrin <3"))
 	{
 		cout << "Test + Operator: PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test + Operator: FAIL" << endl;
+		return false;
 	}
 }
 
 // Test += operator
-void testPlusEqualOperator()
+bool testPlusEqualOperator()
 {
 	String message("Making Games = ");
 	String game("Making Money For Fun!!");
@@ -258,15 +294,17 @@ void testPlusEqualOperator()
 	if (message.equalTo("Making Games = Making Money For Fun!!"))
 	{
 		cout << "Test += Operator: PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test += Operator: FAIL" << endl;
+		return false;
 	}
 }
 
 // Test replace()
-void testReplace()
+bool testReplace()
 {
 	String sentence("Jolteon is My Favorite Pokemon!!!");
 	String oldWord("Jolteon");
@@ -275,10 +313,27 @@ void testReplace()
 	if (sentence.equalTo("Gengar is My Favorite Pokemon!!!"))
 	{
 		cout << "Test Replace(): PASS" << endl;
+		return true;
 	}
 	else
 	{
 		cout << "Test Replace(): FAIL" << endl;
+		return false;
+	}
+}
+
+// Test Result into .txt file
+void logTestResult(ofstream& logfile, int testNumber, string testName, bool passed)
+{
+	logfile << "Test " << testNumber << "\t";
+	logfile << testName << "\t";
+	if (passed)
+	{
+		logfile << "Successful" << endl;
+	}
+	else
+	{
+		logfile << "Failed" << endl;
 	}
 }
 
