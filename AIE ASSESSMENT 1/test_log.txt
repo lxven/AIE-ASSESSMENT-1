@@ -1,0 +1,19 @@
+Test 0	Length	Successful
+Test 0	Length: 	Successful
+Test 1	CharacterAt: 	Successful
+Test 2	ToUpper: 	Successful
+Test 3	ToLower: 	Successful
+Test 4	Append: 	Successful
+Test 5	Prepend: 	Successful
+Test 6	CStr: 	Successful
+Test 7	EqualTo	Successful
+Test 8	Find: 	Successful
+Test 9	StartIndexFind: 	Successful
+Test 10	ReadFromConsole: 	Successful
+Test 11	Bracket Operator: 	Successful
+Test 12	Equal Operator: 	Successful
+Test 13	Assigment Operator: 	Successful
+Test 14	LessThanOperator: 	Successful
+Test 15	PlusOperator: 	Successful
+Test 16	PlusEqualOperator: 	Successful
+Test 17	Replace: 	Successful

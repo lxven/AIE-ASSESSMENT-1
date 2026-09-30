@@ -518,134 +518,207 @@ int main()
 	int passedTests = 0;
 	int totalTests = 18;
 
-	// Test length()
+	// Test length() 
 	bool lengthResult = testLength();
-	if (testLength())
+	if (lengthResult)
 	{
 		passedTests++;
 	}
+		// Log length() result
+		logTestResult(logFile, 0, "Length: ", lengthResult);
+
+
 
 	// Test characterAt()
 	bool characterAtResult = testCharacterAt();
-	if (testCharacterAt())
+	if (characterAtResult)
 	{
 		passedTests++;
 	}
+		// Log characterAt() result
+		logTestResult(logFile, 1, "CharacterAt: ", characterAtResult);
+
+
 
 	// Test toUpper()
 	bool toUpperResult = testToUpper();
-	if (testToUpper())
+	if (toUpperResult)
 	{
 		passedTests++;
 	}
+		// Log toUpper() result
+		logTestResult(logFile, 2, "ToUpper: ", toUpperResult);
+
+
 
 	// Test toLower()
 	bool toLowerResult = testToLower();
-	if (testToLower())
+	if (toLowerResult)
 	{
 		passedTests++;
 	}
+		// Log toLower() result
+		logTestResult(logFile, 3, "ToLower: ", toLowerResult);
+
+
 
 	// Test append()
 	bool appendResult = testAppend();
-	if (testAppend())
+	if (appendResult)
 	{
 		passedTests++;
 	}
+		// Log append() result
+		logTestResult(logFile, 4, "Append: ", appendResult);
+
+		
 
 	// Test prepend()
 	bool prependResult = testPrepend();
-	if (testPrepend())
+	if (prependResult)
 	{
 		passedTests++;
 	}
+		// Log prepend() result
+		logTestResult(logFile, 5, "Prepend: ", prependResult);
+
+
 
 	// Test cStr()
 	bool cStrResult = testCStr();
-	if (testCStr())
+	if (cStrResult)
 	{
 		passedTests++;
 	}
+		// Log cStr() result
+		logTestResult(logFile, 6, "CStr: ", cStrResult);
+
+
 
 	// Test equalTo()
 	bool equalToResult = testEqualTo();
-	if (testEqualTo())
+	if (equalToResult)
 	{
 		passedTests++;
 	}
+		// Log equalTo() result
+		logTestResult(logFile, 7, "EqualTo", equalToResult);
+
+
 
 	// Test find()
 	bool findResult = testFind();
-	if (testFind())
+	if (findResult)
 	{
 		passedTests++;
 	}
+		// Log find() result
+		logTestResult(logFile, 8, "Find: ", findResult);
+
+
 
 	// Test startIndexFind()
 	bool startIndexFindResult = testStartIndexFind();
-	if (testStartIndexFind())
+	if (startIndexFindResult)
 	{
 		passedTests++;
 	}
+		// Log startIndexFind() result
+	logTestResult(logFile, 9, "StartIndexFind: ", startIndexFindResult);
+
+		
 
 	// Test readFromConsole()
 	bool readFromConsoleResult = testReadFromConsole();
-	if (testReadFromConsole())
+	if (readFromConsoleResult)
 	{
 		passedTests++;
 	}
+		// Log readFromConsole() result
+		logTestResult(logFile, 10, "ReadFromConsole: ", readFromConsoleResult);
+
+
 
 	// Test writeToConsole()
 	testWriteToConsole();
 
 
+
 	// Test [] operator
-	bool testBracketOperatorResult = testBracketOperator();
-	if (testBracketOperator())
+	bool bracketOperatorResult = testBracketOperator();
+	if (bracketOperatorResult)
 	{
 		passedTests++;
 	}
+		// Log [] operator result
+		logTestResult(logFile, 11, "Bracket Operator: ", bracketOperatorResult);
+
+
 
 	// Test == operator
-	bool testEqualOperatorResult = testEqualOperator();
-	if (testEqualOperator())
+	bool equalOperatorResult = testEqualOperator();
+	if (equalOperatorResult)
 	{
 		passedTests++;
 	}
+		// Log == operator result
+		logTestResult(logFile, 12, "Equal Operator: ", equalOperatorResult);
+
+
 
 	// Test = operator
-	bool testAssignmentResult = testAssigmentOperator();
-	if (testAssigmentOperator())
+	bool assignmentResult = testAssigmentOperator();
+	if (assignmentResult)
 	{
 		passedTests++;
 	}
+		// Log = opeerator result
+		logTestResult(logFile, 13, "Assigment Operator: ", assignmentResult);
+
+
 
 	// Test < operator
-	bool testLessThanResult = testLessThanOperator();
-	if (testLessThanOperator())
+	bool lessThanResult = testLessThanOperator();
+	if (lessThanResult)
 	{
 		passedTests++;
 	}
+		// Log < operator result
+		logTestResult(logFile, 14, "LessThanOperator: ", lessThanResult);
+
+
 
 	// Test + operator
-	bool testPlusResult = testPlusOperator();
-	if (testPlusOperator())
+	bool plusResult = testPlusOperator();
+	if (plusResult)
 	{
 		passedTests++;
 	}
+		// Log + operator result
+		logTestResult(logFile, 15, "PlusOperator: ", plusResult);
+
+
+
 
 	// Test += operator
-	bool testPlusEqualResult = testPlusEqualOperator();
-	if (testPlusEqualOperator())
+	bool plusEqualResult = testPlusEqualOperator();
+	if (plusEqualResult)
 	{
 		passedTests++;
 	}
+		// Log += operator result
+		logTestResult(logFile, 16, "PlusEqualOperator: ", plusEqualResult);
+
+
 
 	// Test replace()
-	bool testReplaceResult = testReplace();
-	if (testReplace())
+	bool replaceResult = testReplace();
+	if (replaceResult)
 	{
 		passedTests++;
 	}
+		// Log replace result
+		logTestResult(logFile, 17, "Replace: ", replaceResult);
+
 	return 0;
 }
