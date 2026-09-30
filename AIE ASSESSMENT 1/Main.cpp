@@ -233,7 +233,7 @@ bool testEqualOperator()
 
 
 // Test function = operator()
-bool testAssigmentOperator()
+bool testAssignmentOperator()
 {
 	String favoriteGame("Destiny 2");
 	String copiedGame;
@@ -524,10 +524,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log length() result
-		logTestResult(logFile, 0, "Length: ", lengthResult);
-
-
 
 	// Test characterAt()
 	bool characterAtResult = testCharacterAt();
@@ -535,10 +531,7 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log characterAt() result
-		logTestResult(logFile, 1, "CharacterAt: ", characterAtResult);
-
-
+	
 
 	// Test toUpper()
 	bool toUpperResult = testToUpper();
@@ -546,9 +539,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log toUpper() result
-		logTestResult(logFile, 2, "ToUpper: ", toUpperResult);
-
 
 
 	// Test toLower()
@@ -557,9 +547,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log toLower() result
-		logTestResult(logFile, 3, "ToLower: ", toLowerResult);
-
 
 
 	// Test append()
@@ -568,10 +555,7 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log append() result
-		logTestResult(logFile, 4, "Append: ", appendResult);
-
-		
+	
 
 	// Test prepend()
 	bool prependResult = testPrepend();
@@ -579,9 +563,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log prepend() result
-		logTestResult(logFile, 5, "Prepend: ", prependResult);
-
 
 
 	// Test cStr()
@@ -590,9 +571,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log cStr() result
-		logTestResult(logFile, 6, "CStr: ", cStrResult);
-
 
 
 	// Test equalTo()
@@ -601,9 +579,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log equalTo() result
-		logTestResult(logFile, 7, "EqualTo", equalToResult);
-
 
 
 	// Test find()
@@ -612,9 +587,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log find() result
-		logTestResult(logFile, 8, "Find: ", findResult);
-
 
 
 	// Test startIndexFind()
@@ -623,10 +595,7 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log startIndexFind() result
-	logTestResult(logFile, 9, "StartIndexFind: ", startIndexFindResult);
 
-		
 
 	// Test readFromConsole()
 	bool readFromConsoleResult = testReadFromConsole();
@@ -634,14 +603,10 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log readFromConsole() result
-		logTestResult(logFile, 10, "ReadFromConsole: ", readFromConsoleResult);
-
 
 
 	// Test writeToConsole()
 	testWriteToConsole();
-
 
 
 	// Test [] operator
@@ -650,9 +615,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log [] operator result
-		logTestResult(logFile, 11, "Bracket Operator: ", bracketOperatorResult);
-
 
 
 	// Test == operator
@@ -661,21 +623,15 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log == operator result
-		logTestResult(logFile, 12, "Equal Operator: ", equalOperatorResult);
-
 
 
 	// Test = operator
-	bool assignmentResult = testAssigmentOperator();
+	bool assignmentResult = testAssignmentOperator();
 	if (assignmentResult)
 	{
 		passedTests++;
 	}
-		// Log = opeerator result
-		logTestResult(logFile, 13, "Assigment Operator: ", assignmentResult);
-
-
+		
 
 	// Test < operator
 	bool lessThanResult = testLessThanOperator();
@@ -683,9 +639,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log < operator result
-		logTestResult(logFile, 14, "LessThanOperator: ", lessThanResult);
-
 
 
 	// Test + operator
@@ -694,10 +647,6 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log + operator result
-		logTestResult(logFile, 15, "PlusOperator: ", plusResult);
-
-
 
 
 	// Test += operator
@@ -706,10 +655,7 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log += operator result
-		logTestResult(logFile, 16, "PlusEqualOperator: ", plusEqualResult);
-
-
+		
 
 	// Test replace()
 	bool replaceResult = testReplace();
@@ -717,8 +663,47 @@ int main()
 	{
 		passedTests++;
 	}
-		// Log replace result
-		logTestResult(logFile, 17, "Replace: ", replaceResult);
+
+
+	// Calculate perectage for passed test
+	double percentage = (static_cast<double>(passedTests) / totalTests) * 100.0;
+
+	// Get current date and time
+	time_t now = time(0);
+	tm localTime;
+	localtime_s(&localTime, &now);
+
+	// Write data and time to log file
+	logFile << "Date:\t" << put_time(&localTime, "%m/%d/%Y") << "\t";
+	logFile << "Time:\t" << put_time(&localTime, "%H:%M:%S") << endl;
+
+	// Log percentage
+	logFile << "Percentage Successful:\t" << fixed << setprecision(2) << percentage << "%" << endl;
+
+	///////////// Log Result ////////////
+	logTestResult(logFile, 0, "Length: ", lengthResult);
+	logTestResult(logFile, 1, "CharacterAt: ", characterAtResult);
+	logTestResult(logFile, 2, "ToUpper: ", toUpperResult);
+	logTestResult(logFile, 3, "ToLower: ", toLowerResult);
+	logTestResult(logFile, 4, "Append: ", appendResult);
+	logTestResult(logFile, 5, "Prepend: ", prependResult);
+	logTestResult(logFile, 6, "CStr: ", cStrResult);
+	logTestResult(logFile, 7, "EqualTo", equalToResult);
+	logTestResult(logFile, 8, "Find: ", findResult);
+	logTestResult(logFile, 9, "StartIndexFind: ", startIndexFindResult);
+	logTestResult(logFile, 10, "ReadFromConsole: ", readFromConsoleResult);
+	logTestResult(logFile, 11, "Bracket Operator: ", bracketOperatorResult);
+	logTestResult(logFile, 12, "Equal Operator: ", equalOperatorResult);
+	logTestResult(logFile, 13, "Assignment Operator: ", assignmentResult);
+	logTestResult(logFile, 14, "LessThanOperator: ", lessThanResult);
+	logTestResult(logFile, 15, "PlusOperator: ", plusResult);
+	logTestResult(logFile, 16, "PlusEqualOperator: ", plusEqualResult);
+	logTestResult(logFile, 17, "Replace: ", replaceResult);
+	
+	logFile << endl;
+
+	// Close the file
+	logFile.close();
 
 	return 0;
 }
